@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB0BD2B91951D54600692A04 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BD2B81951D54600692A04 /* MainViewController.swift */; };
+		BB0BD2BB1951D5C900692A04 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BD2BA1951D5C900692A04 /* SettingViewController.swift */; };
+		BB0BD2BE1951D64200692A04 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BD2BD1951D64200692A04 /* TabViewController.swift */; };
+		BB0BD2C41951EC8D00692A04 /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BD2C31951EC8D00692A04 /* TileView.swift */; };
 		BB4B45D61950863B00981AB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4B45D51950863B00981AB8 /* AppDelegate.swift */; };
 		BB4B45D81950863B00981AB8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4B45D71950863B00981AB8 /* ViewController.swift */; };
 		BB4B45DB1950863B00981AB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB4B45D91950863B00981AB8 /* Main.storyboard */; };
@@ -25,10 +29,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BB0BD2B81951D54600692A04 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		BB0BD2BA1951D5C900692A04 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		BB0BD2BD1951D64200692A04 /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		BB0BD2C31951EC8D00692A04 /* TileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileView.swift; sourceTree = "<group>"; };
 		BB4B45D01950863B00981AB8 /* Tile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB4B45D41950863B00981AB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB4B45D51950863B00981AB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BB4B45D71950863B00981AB8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BB4B45D71950863B00981AB8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Tile/ViewController.swift; sourceTree = SOURCE_ROOT; usesTabs = 0; };
 		BB4B45DA1950863B00981AB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BB4B45DC1950863B00981AB8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BB4B45E21950863B00981AB8 /* TileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +62,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BB0BD2BC1951D5F100692A04 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				BB0BD2B81951D54600692A04 /* MainViewController.swift */,
+				BB0BD2BA1951D5C900692A04 /* SettingViewController.swift */,
+				BB0BD2BD1951D64200692A04 /* TabViewController.swift */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		BB0BD2C21951EC6D00692A04 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				BB0BD2C31951EC8D00692A04 /* TileView.swift */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
 		BB4B45C71950863B00981AB8 = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +101,8 @@
 		BB4B45D21950863B00981AB8 /* Tile */ = {
 			isa = PBXGroup;
 			children = (
+				BB0BD2C21951EC6D00692A04 /* view */,
+				BB0BD2BC1951D5F100692A04 /* controller */,
 				BB4B45D51950863B00981AB8 /* AppDelegate.swift */,
 				BB4B45D71950863B00981AB8 /* ViewController.swift */,
 				BB4B45D91950863B00981AB8 /* Main.storyboard */,
@@ -208,8 +236,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB0BD2B91951D54600692A04 /* MainViewController.swift in Sources */,
 				BB4B45D81950863B00981AB8 /* ViewController.swift in Sources */,
 				BB4B45D61950863B00981AB8 /* AppDelegate.swift in Sources */,
+				BB0BD2BE1951D64200692A04 /* TabViewController.swift in Sources */,
+				BB0BD2C41951EC8D00692A04 /* TileView.swift in Sources */,
+				BB0BD2BB1951D5C900692A04 /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +431,7 @@
 				BB4B45EE1950863B00981AB8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BB4B45EF1950863B00981AB8 /* Build configuration list for PBXNativeTarget "TileTests" */ = {
 			isa = XCConfigurationList;
@@ -407,6 +440,7 @@
 				BB4B45F11950863B00981AB8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
