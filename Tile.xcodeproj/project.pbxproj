@@ -17,6 +17,7 @@
 		BB4B45DD1950863B00981AB8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB4B45DC1950863B00981AB8 /* Images.xcassets */; };
 		BB4B45E91950863B00981AB8 /* TileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4B45E81950863B00981AB8 /* TileTests.swift */; };
 		BBD41A791953152600156B0F /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD41A781953152600156B0F /* GameModel.swift */; };
+		BBD41A7B19531E3200156B0F /* ControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD41A7A19531E3200156B0F /* ControlView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		BB4B45E71950863B00981AB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB4B45E81950863B00981AB8 /* TileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileTests.swift; sourceTree = "<group>"; };
 		BBD41A781953152600156B0F /* GameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameModel.swift; path = model/GameModel.swift; sourceTree = "<group>"; };
+		BBD41A7A19531E3200156B0F /* ControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ControlView.swift; path = view/ControlView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				BB0BD2C31951EC8D00692A04 /* TileView.swift */,
+				BBD41A7A19531E3200156B0F /* ControlView.swift */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBD41A7B19531E3200156B0F /* ControlView.swift in Sources */,
 				BB0BD2B91951D54600692A04 /* MainViewController.swift in Sources */,
 				BB4B45D81950863B00981AB8 /* ViewController.swift in Sources */,
 				BBD41A791953152600156B0F /* GameModel.swift in Sources */,
