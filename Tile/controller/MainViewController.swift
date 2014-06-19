@@ -75,7 +75,7 @@ class MainViewController: UIViewController {
         self.view.addSubview(tile)
         self.view.bringSubviewToFront(tile)
         tile.layer.setAffineTransform(CGAffineTransformMakeScale(0.1, 0.1))
-        UIView.animateWithDuration(1, delay:0.5, options:UIViewAnimationOptions.TransitionNone, animations:
+        UIView.animateWithDuration(0.5, delay:0.5, options:UIViewAnimationOptions.TransitionNone, animations:
         {
             ()-> Void in tile.layer.setAffineTransform(CGAffineTransformMakeScale(1, 1))
         },

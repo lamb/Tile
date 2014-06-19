@@ -16,6 +16,7 @@
 		BB4B45DB1950863B00981AB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB4B45D91950863B00981AB8 /* Main.storyboard */; };
 		BB4B45DD1950863B00981AB8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB4B45DC1950863B00981AB8 /* Images.xcassets */; };
 		BB4B45E91950863B00981AB8 /* TileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4B45E81950863B00981AB8 /* TileTests.swift */; };
+		BBD41A791953152600156B0F /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD41A781953152600156B0F /* GameModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,10 +30,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BB0BD2B81951D54600692A04 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		BB0BD2BA1951D5C900692A04 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
-		BB0BD2BD1951D64200692A04 /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
-		BB0BD2C31951EC8D00692A04 /* TileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileView.swift; sourceTree = "<group>"; };
+		BB0BD2B81951D54600692A04 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = controller/MainViewController.swift; sourceTree = "<group>"; };
+		BB0BD2BA1951D5C900692A04 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingViewController.swift; path = controller/SettingViewController.swift; sourceTree = "<group>"; };
+		BB0BD2BD1951D64200692A04 /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabViewController.swift; path = controller/TabViewController.swift; sourceTree = "<group>"; };
+		BB0BD2C31951EC8D00692A04 /* TileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TileView.swift; path = view/TileView.swift; sourceTree = "<group>"; };
 		BB4B45D01950863B00981AB8 /* Tile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB4B45D41950863B00981AB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB4B45D51950863B00981AB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +43,7 @@
 		BB4B45E21950863B00981AB8 /* TileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB4B45E71950863B00981AB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB4B45E81950863B00981AB8 /* TileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileTests.swift; sourceTree = "<group>"; };
+		BBD41A781953152600156B0F /* GameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameModel.swift; path = model/GameModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		BB4B45D21950863B00981AB8 /* Tile */ = {
 			isa = PBXGroup;
 			children = (
+				BBD41A77195314E500156B0F /* model */,
 				BB0BD2C21951EC6D00692A04 /* view */,
 				BB0BD2BC1951D5F100692A04 /* controller */,
 				BB4B45D51950863B00981AB8 /* AppDelegate.swift */,
@@ -135,6 +138,14 @@
 				BB4B45E71950863B00981AB8 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BBD41A77195314E500156B0F /* model */ = {
+			isa = PBXGroup;
+			children = (
+				BBD41A781953152600156B0F /* GameModel.swift */,
+			);
+			name = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +249,7 @@
 			files = (
 				BB0BD2B91951D54600692A04 /* MainViewController.swift in Sources */,
 				BB4B45D81950863B00981AB8 /* ViewController.swift in Sources */,
+				BBD41A791953152600156B0F /* GameModel.swift in Sources */,
 				BB4B45D61950863B00981AB8 /* AppDelegate.swift in Sources */,
 				BB0BD2BE1951D64200692A04 /* TabViewController.swift in Sources */,
 				BB0BD2C41951EC8D00692A04 /* TileView.swift in Sources */,
