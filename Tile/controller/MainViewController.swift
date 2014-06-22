@@ -64,12 +64,27 @@ class MainViewController: UIViewController {
     
     func resetTapped(){
         println("重置")
+        resetUI()
+        gmodel.initTiles();
+    }
+    
+    func resetUI(){
         for(key, tile) in tiles{
             tile.removeFromSuperview()
         }
         tiles.removeAll(keepCapacity: true)
         tileVals.removeAll(keepCapacity: true)
-        gmodel.initTiles();
+    }
+    
+    func initUI(){
+        for i in 0..dimension{
+            for j in 0..dimension{
+                var index = i * self.dimension + j
+                if(gmodel.tiles[index] != 0){
+                    insertTile((i,j), value:gmodel.tiles[index])
+                }
+            }
+        }
     }
     
     func genTapped(){
@@ -96,34 +111,59 @@ class MainViewController: UIViewController {
         self.view.addGestureRecognizer(rightSwipe)
     }
     
-    func swipeUp(){
-        println("swipeUp")
-        for i in 0..dimension{
-            for j in 0..dimension{
-                var row:Int = i
-                var col:Int = j
-                var key = NSIndexPath(forRow:row, inSection:col)
-                if(tileVals.indexForKey(key) != nil){
-                    if(row > 0){
-                        var value = tileVals[key];
-                        removeKeyTile(key)
-                        var index = row * dimension + col - dimension
-                        row = Int (index/dimension)
-                        col = index - row * dimension
-                        insertTile((row,col), value:value!)
-                    }
-                }
+    func printTiles(tiles:Array<Int>){
+        var count = tiles.count
+        for(var i = 0;i < count;i++){
+            if(i + 1)%dimension == 0{
+                println(tiles[i])
+            }else{
+                print("\(tiles[i])\t")
             }
         }
+        println("")
+    
+    }
+    
+    func swipeUp(){
+        println("swipeUp")
+        gmodel.reflowUp()
+        resetUI()
+        initUI()
+//        for i in 0..dimension{
+//            for j in 0..dimension{
+//                var row:Int = i
+//                var col:Int = j
+//                var key = NSIndexPath(forRow:row, inSection:col)
+//                if(tileVals.indexForKey(key) != nil){
+//                    if(row > 0){
+//                        var value = tileVals[key];
+//                        removeKeyTile(key)
+//                        var index = row * dimension + col - dimension
+//                        row = Int (index/dimension)
+//                        col = index - row * dimension
+//                        insertTile((row,col), value:value!)
+//                    }
+//                }
+//            }
+//        }
     }
     func swipeDown(){
         println("swipeDown")
+        gmodel.reflowDown()
+        resetUI()
+        initUI()
     }
     func swipeLeft(){
         println("swipeLeft")
+        gmodel.reflowLeft()
+        resetUI()
+        initUI()
     }
     func swipeRight(){
         println("swipeRight")
+        gmodel.reflowRight()
+        resetUI()
+        initUI()
     }
     
     func removeKeyTile(key:NSIndexPath){
