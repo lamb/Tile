@@ -11,6 +11,7 @@
 		BB0BD2BB1951D5C900692A04 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BD2BA1951D5C900692A04 /* SettingViewController.swift */; };
 		BB0BD2BE1951D64200692A04 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BD2BD1951D64200692A04 /* TabViewController.swift */; };
 		BB0BD2C41951EC8D00692A04 /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BD2C31951EC8D00692A04 /* TileView.swift */; };
+		BB46BECB1956BF2700D77F22 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB46BECA1956BF2700D77F22 /* ScoreView.swift */; };
 		BB4B45D61950863B00981AB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4B45D51950863B00981AB8 /* AppDelegate.swift */; };
 		BB4B45D81950863B00981AB8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4B45D71950863B00981AB8 /* ViewController.swift */; };
 		BB4B45DB1950863B00981AB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB4B45D91950863B00981AB8 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 		BB0BD2BA1951D5C900692A04 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingViewController.swift; path = controller/SettingViewController.swift; sourceTree = "<group>"; };
 		BB0BD2BD1951D64200692A04 /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabViewController.swift; path = controller/TabViewController.swift; sourceTree = "<group>"; };
 		BB0BD2C31951EC8D00692A04 /* TileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TileView.swift; path = view/TileView.swift; sourceTree = "<group>"; };
+		BB46BECA1956BF2700D77F22 /* ScoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScoreView.swift; path = view/ScoreView.swift; sourceTree = "<group>"; };
 		BB4B45D01950863B00981AB8 /* Tile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB4B45D41950863B00981AB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB4B45D51950863B00981AB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			children = (
 				BB0BD2C31951EC8D00692A04 /* TileView.swift */,
 				BBD41A7A19531E3200156B0F /* ControlView.swift */,
+				BB46BECA1956BF2700D77F22 /* ScoreView.swift */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 			files = (
 				BBD41A7B19531E3200156B0F /* ControlView.swift in Sources */,
 				BB0BD2B91951D54600692A04 /* MainViewController.swift in Sources */,
+				BB46BECB1956BF2700D77F22 /* ScoreView.swift in Sources */,
 				BB4B45D81950863B00981AB8 /* ViewController.swift in Sources */,
 				BBD41A791953152600156B0F /* GameModel.swift in Sources */,
 				BB4B45D61950863B00981AB8 /* AppDelegate.swift in Sources */,

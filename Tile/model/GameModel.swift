@@ -16,8 +16,18 @@ class GameModel{
     
     var mtiles:Array<Int>!
     
-    init(dimension:Int){
+    var scoreDelegate:ScoreViewProtocol!
+    
+    var bestScoreDelegate:ScoreViewProtocol!
+    
+    var score:Int = 0
+    
+    var bestScore:Int = 0
+    
+    init(dimension:Int, scoreDelegate:ScoreViewProtocol, bestScoreDelegate:ScoreViewProtocol){
         self.dimension = dimension
+        self.scoreDelegate = scoreDelegate
+        self.bestScoreDelegate = bestScoreDelegate
         initTiles()
     }
     
@@ -171,6 +181,7 @@ class GameModel{
                 index = self.dimension * i + j;
                 if(mtiles[index]>0&&mtiles[index - self.dimension]==mtiles[index]){
                     mtiles[index - self.dimension] = mtiles[index]*2
+                    changeScore(mtiles[index]*2)
                     mtiles[index] = 0
                 }
             }
@@ -186,6 +197,7 @@ class GameModel{
                 index = self.dimension * i + j;
                 if(mtiles[index]>0&&mtiles[index + self.dimension]==mtiles[index]){
                     mtiles[index+self.dimension] = mtiles[index]*2
+                    changeScore(mtiles[index]*2)
                     mtiles[index] = 0
                 }
             }
@@ -201,6 +213,7 @@ class GameModel{
                 index = self.dimension * i + j;
                 if(mtiles[index]>0&&mtiles[index - 1]==mtiles[index]){
                     mtiles[index - 1] = mtiles[index]*2
+                    changeScore(mtiles[index]*2)
                     mtiles[index] = 0
                 }
             }
@@ -216,11 +229,22 @@ class GameModel{
                 index = self.dimension * i + j;
                 if(mtiles[index]>0&&mtiles[index + 1]==mtiles[index]){
                     mtiles[index + 1] = mtiles[index]*2
+                    changeScore(mtiles[index]*2)
                     mtiles[index] = 0
                 }
             }
         }
         copyFromMtiles()
+    }
+    
+    func changeScore(s:Int){
+        score += s
+        if(bestScore < score){
+            bestScore = score
+        }
+        println("\(score)|\(bestScore)");
+        scoreDelegate.changeScore(value: score)
+        bestScoreDelegate.changeScore(value: bestScore)
     }
     
 }
