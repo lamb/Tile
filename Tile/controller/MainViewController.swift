@@ -127,6 +127,8 @@ class MainViewController: UIViewController {
     func swipeUp(){
         println("swipeUp")
         gmodel.reflowUp()
+        gmodel.mergeUp()
+        gmodel.reflowUp()
         resetUI()
         initUI()
 //        for i in 0..dimension{
@@ -150,17 +152,23 @@ class MainViewController: UIViewController {
     func swipeDown(){
         println("swipeDown")
         gmodel.reflowDown()
+        gmodel.mergeDown()
+        gmodel.reflowDown()
         resetUI()
         initUI()
     }
     func swipeLeft(){
         println("swipeLeft")
         gmodel.reflowLeft()
+        gmodel.mergeLeft()
+        gmodel.reflowLeft()
         resetUI()
         initUI()
     }
     func swipeRight(){
         println("swipeRight")
+        gmodel.reflowRight()
+        gmodel.mergeRight()
         gmodel.reflowRight()
         resetUI()
         initUI()
