@@ -19,7 +19,7 @@ class MainViewController: UIViewController {
     //游戏方格维度
     var dimension:Int = 4
     //游戏过关最大值
-    var maxnumber:Int = 2048
+    var maxnumber:Int = 32
     //游戏格子的宽度
     var width:CGFloat = 50
     //格子与格子的间距
@@ -106,10 +106,14 @@ class MainViewController: UIViewController {
         var key:NSIndexPath
         var tile:TileView
         var tileVal:Int
+        var success:Bool = false
         for i in 0..dimension{
             for j in 0..dimension{
                 index = i * self.dimension + j
                 key = NSIndexPath(forRow:i, inSection:j)
+                if(gmodel.tiles[index]>=maxnumber){
+                    success = true
+                }
                 //原来界面没有值，模型数据中有值
                 if(gmodel.tiles[index] > 0 && tileVals.indexForKey(key)==nil){
                     insertTile((i,j), value:gmodel.tiles[index], atype:Animation2048Type.Merge)
@@ -133,6 +137,14 @@ class MainViewController: UIViewController {
                     }
                 }
             }
+        }
+        if(success){
+            var alertView = UIAlertView()
+            alertView.title = "恭喜您通关"
+            alertView.message = "嘿，真棒，您通关了！"
+            alertView.addButtonWithTitle("确定!")
+            alertView.show()
+            self.resetTapped()
         }
     }
     
