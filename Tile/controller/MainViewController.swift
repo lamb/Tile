@@ -17,9 +17,13 @@ enum Animation2048Type{
 class MainViewController: UIViewController {
     
     //游戏方格维度
-    var dimension:Int = 4
+    var dimension:Int = 4{
+        didSet{
+            gmodel.dimension = dimension
+        }
+    }
     //游戏过关最大值
-    var maxnumber:Int = 32
+    var maxnumber:Int = 1024
     //游戏格子的宽度
     var width:CGFloat = 50
     //格子与格子的间距
@@ -99,6 +103,11 @@ class MainViewController: UIViewController {
         tileVals.removeAll(keepCapacity: true)
         score.changeScore(value:0)
         gmodel.score = 0
+        gmodel.initTiles()
+        for background in backgrounds {
+            background.removeFromSuperview()
+        }
+        setupBackground()
     }
     
     func initUI(){

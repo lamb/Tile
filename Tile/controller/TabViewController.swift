@@ -14,7 +14,7 @@ class TabViewController: UITabBarController {
         super.init(nibName:nil, bundle:nil)
         var viewMain = MainViewController();
         viewMain.title = "2048"
-        var viewSetting = SettingViewController()
+        var viewSetting = SettingViewController(mainview:viewMain)
         viewSetting.title = "设置"
         var main = UINavigationController(rootViewController:viewMain)
         var setting = UINavigationController(rootViewController:viewSetting)
