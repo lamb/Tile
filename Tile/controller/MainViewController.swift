@@ -29,7 +29,7 @@ class MainViewController: UIViewController {
     //格子与格子的间距
     var padding:CGFloat = 6
     //保存背景数据
-    var backgrounds:Array<UIView>
+    var backgrounds:Array<UILabel>
     //起始点x
     var fromX:CGFloat = 30
     //起始点y
@@ -44,7 +44,7 @@ class MainViewController: UIViewController {
     var bestScore:BestScoreView!
     
     init(){
-        self.backgrounds = Array<UIView>()
+        self.backgrounds = Array<UILabel>()
         self.tiles = Dictionary<NSIndexPath, TileView>()
         self.tileVals = Dictionary<NSIndexPath, Int>()
         super.init(nibName:nil, bundle:nil)
@@ -265,7 +265,7 @@ class MainViewController: UIViewController {
         {
             y = fromY
             for j in 0..dimension{
-                var background = UIView(frame:CGRectMake(x, y, width, width))
+                var background = UILabel(frame:CGRectMake(x, y, width, width))
                 background.backgroundColor = UIColor.darkGrayColor();
                 self.view.addSubview(background)
                 backgrounds += background
@@ -301,7 +301,7 @@ class MainViewController: UIViewController {
         let (row, col) = pos;
         let x = fromX + CGFloat(col) * (width + padding)
         let y = fromY + CGFloat(row) * (width + padding)
-        let tile = TileView(pos:CGPointMake(x, y), width:width, value:value)
+        var tile = TileView(pos:CGPointMake(x, y), width:width, value:value)
         self.view.addSubview(tile)
         self.view.bringSubviewToFront(tile)
         var index = NSIndexPath(forRow:row, inSection:col)
