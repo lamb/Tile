@@ -37,7 +37,7 @@ class MainViewController: UIViewController {
     //游戏数据模型
     var gmodel:GameModel!
     //保存界面上的数字Label数据
-    var tiles:Dictionary<NSIndexPath, TileView>
+    var tiles:Dictionary<NSIndexPath, UILabel>
     //保存实际数字值的一个字典
     var tileVals:Dictionary<NSIndexPath, Int>
     var score:ScoreView!
@@ -45,7 +45,7 @@ class MainViewController: UIViewController {
     
     init(){
         self.backgrounds = Array<UILabel>()
-        self.tiles = Dictionary<NSIndexPath, TileView>()
+        self.tiles = Dictionary<NSIndexPath, UILabel>()
         self.tileVals = Dictionary<NSIndexPath, Int>()
         super.init(nibName:nil, bundle:nil)
     }
@@ -113,7 +113,7 @@ class MainViewController: UIViewController {
     func initUI(){
         var index:Int
         var key:NSIndexPath
-        var tile:TileView
+        var tile:UILabel
         var tileVal:Int
         var success:Bool = false
         for i in 0..dimension{
@@ -301,7 +301,8 @@ class MainViewController: UIViewController {
         let (row, col) = pos;
         let x = fromX + CGFloat(col) * (width + padding)
         let y = fromY + CGFloat(row) * (width + padding)
-        var tile = TileView(pos:CGPointMake(x, y), width:width, value:value)
+        var cv = ControlView()
+        var tile = cv.createTileLabel(CGPointMake(x, y), width:width, value:value)
         self.view.addSubview(tile)
         self.view.bringSubviewToFront(tile)
         var index = NSIndexPath(forRow:row, inSection:col)

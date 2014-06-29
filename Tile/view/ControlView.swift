@@ -53,5 +53,32 @@ class ControlView{
         label.font =  UIFont(name: "HelveticaNeue-Bold", size: 16)
         return label
     }
+    
+    let colorMap = [
+        2:UIColor.redColor(),
+        4:UIColor.orangeColor(),
+        8:UIColor.yellowColor(),
+        16:UIColor.greenColor(),
+        32:UIColor.brownColor(),
+        64:UIColor.blueColor(),
+        128:UIColor.purpleColor(),
+        256:UIColor.cyanColor(),
+        512:UIColor.lightGrayColor(),
+        1024:UIColor.magentaColor(),
+        2048:UIColor.blackColor()
+    ]
+    
+    func createTileLabel(pos:CGPoint, width:CGFloat, value:Int) -> UILabel
+    {
+        var numberLabel:UILabel = UILabel(frame:CGRectMake(pos.x , pos.y, width, width))
+        numberLabel.textColor = UIColor.whiteColor()
+        numberLabel.textAlignment = NSTextAlignment.Center
+        numberLabel.minimumScaleFactor = 0.5
+        numberLabel.font = UIFont(name:"微软雅黑", size:20)
+        numberLabel.text = "\(value)"
+        numberLabel.backgroundColor = colorMap[value]
+        println(colorMap[value])
+        return numberLabel
+    }
 
 }
