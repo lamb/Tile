@@ -52,11 +52,11 @@ class GameModel{
         return true;
     }
     
-    func emptyPositions()->Int[]{
+    func emptyPositions()->[Int]{
         var emptytiles = Array<Int>()
-        for i in 0..(dimension * dimension){
+        for i in 0..<(dimension * dimension){
             if(tiles[i] == 0){
-                emptytiles += i
+                emptytiles.append(tiles[i])
             }
         }
         return emptytiles
@@ -70,14 +70,16 @@ class GameModel{
     }
     
     func copyToMtiles(){
-        for i in 0..self.dimension * self.dimension{
-            mtiles[i] = tiles[i]
+        for i in 0..<self.dimension * self.dimension{
+            mtiles.removeAtIndex(i)
+            mtiles.insert(tiles[i], atIndex: i)
         }
     }
     
     func copyFromMtiles(){
-        for i in 0..self.dimension * self.dimension{
-            tiles[i] = mtiles[i]
+        for i in 0..<self.dimension * self.dimension{
+            tiles.removeAtIndex(i)
+            tiles.insert(mtiles[i], atIndex: i)
         }
     }
     
@@ -85,7 +87,7 @@ class GameModel{
         copyToMtiles()
         var index:Int
         for(var i = dimension - 1; i > 0; i--){
-            for j in 0..dimension{
+            for j in 0..<dimension{
                 index = self.dimension * i + j;
                 if(mtiles[index - self.dimension]==0&&(mtiles[index]>0)){
                     mtiles[index-self.dimension] = mtiles[index]
@@ -107,8 +109,8 @@ class GameModel{
     func reflowDown(){
         copyToMtiles()
         var index:Int
-        for i in 0..dimension - 1{
-            for j in 0..dimension{
+        for i in 0..<dimension - 1{
+            for j in 0..<dimension{
                 index = self.dimension * i + j;
                 if(mtiles[index + self.dimension]==0&&(mtiles[index]>0)){
                     mtiles[index+self.dimension] = mtiles[index]
@@ -130,7 +132,7 @@ class GameModel{
     func reflowLeft(){
         copyToMtiles()
         var index:Int
-        for i in 0..dimension{
+        for i in 0..<dimension{
             for(var j = dimension - 1; j > 0; j--){
                 index = self.dimension * i + j;
                 if(mtiles[index - 1]==0&&(mtiles[index]>0)){
@@ -153,8 +155,8 @@ class GameModel{
     func reflowRight(){
         copyToMtiles()
         var index:Int
-        for i in 0..dimension{
-            for j in 0..dimension - 1{
+        for i in 0..<dimension{
+            for j in 0..<dimension - 1{
                 index = self.dimension * i + j;
                 if(mtiles[index + 1]==0&&(mtiles[index]>0)){
                     mtiles[index + 1] = mtiles[index]
@@ -177,7 +179,7 @@ class GameModel{
         copyToMtiles()
         var index:Int
         for(var i = dimension - 1; i > 0; i--){
-            for j in 0..dimension{
+            for j in 0..<dimension{
                 index = self.dimension * i + j;
                 if(mtiles[index]>0&&mtiles[index - self.dimension]==mtiles[index]){
                     mtiles[index - self.dimension] = mtiles[index]*2
@@ -192,8 +194,8 @@ class GameModel{
     func mergeDown(){
         copyToMtiles()
         var index:Int
-        for i in 0..dimension - 1{
-            for j in 0..dimension{
+        for i in 0..<dimension - 1{
+            for j in 0..<dimension{
                 index = self.dimension * i + j;
                 if(mtiles[index]>0&&mtiles[index + self.dimension]==mtiles[index]){
                     mtiles[index+self.dimension] = mtiles[index]*2
@@ -208,7 +210,7 @@ class GameModel{
     func mergeLeft(){
         copyToMtiles()
         var index:Int
-        for i in 0..dimension{
+        for i in 0..<dimension{
             for(var j = dimension - 1; j > 0; j--){
                 index = self.dimension * i + j;
                 if(mtiles[index]>0&&mtiles[index - 1]==mtiles[index]){
@@ -224,8 +226,8 @@ class GameModel{
     func mergeRight(){
         copyToMtiles()
         var index:Int
-        for i in 0..dimension{
-            for j in 0..dimension - 1{
+        for i in 0..<dimension{
+            for j in 0..<dimension - 1{
                 index = self.dimension * i + j;
                 if(mtiles[index]>0&&mtiles[index + 1]==mtiles[index]){
                     mtiles[index + 1] = mtiles[index]*2

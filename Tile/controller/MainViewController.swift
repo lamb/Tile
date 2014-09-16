@@ -43,11 +43,15 @@ class MainViewController: UIViewController {
     var score:ScoreView!
     var bestScore:BestScoreView!
     
-    init(){
+    override init(){
         self.backgrounds = Array<UILabel>()
         self.tiles = Dictionary<NSIndexPath, UILabel>()
         self.tileVals = Dictionary<NSIndexPath, Int>()
         super.init(nibName:nil, bundle:nil)
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad(){
@@ -57,7 +61,7 @@ class MainViewController: UIViewController {
         setScoreLable()
         setupSwipeGestures()
         self.gmodel = GameModel(dimension:self.dimension,scoreDelegate:score,bestScoreDelegate:bestScore)
-        for i in 0..2{
+        for i in 0..<2{
             genNumber()
         }
     }
@@ -116,8 +120,8 @@ class MainViewController: UIViewController {
         var tile:UILabel
         var tileVal:Int
         var success:Bool = false
-        for i in 0..dimension{
-            for j in 0..dimension{
+        for i in 0..<dimension{
+            for j in 0..<dimension{
                 index = i * self.dimension + j
                 key = NSIndexPath(forRow:i, inSection:j)
                 if(gmodel.tiles[index]>=maxnumber){
@@ -261,14 +265,14 @@ class MainViewController: UIViewController {
     func setupBackground(){
         var x:CGFloat = fromX
         var y:CGFloat = fromY
-        for i in 0..dimension
+        for i in 0..<dimension
         {
             y = fromY
-            for j in 0..dimension{
+            for j in 0..<dimension{
                 var background = UILabel(frame:CGRectMake(x, y, width, width))
                 background.backgroundColor = UIColor.darkGrayColor();
                 self.view.addSubview(background)
-                backgrounds += background
+                backgrounds.append(background)
                 y += padding + width
             }
             x += padding + width

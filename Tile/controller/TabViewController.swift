@@ -10,7 +10,7 @@ import UIKit;
 
 class TabViewController: UITabBarController {
     
-    init(){
+    override init(){
         super.init(nibName:nil, bundle:nil)
         var viewMain = MainViewController();
         viewMain.title = "2048"
@@ -20,6 +20,10 @@ class TabViewController: UITabBarController {
         var setting = UINavigationController(rootViewController:viewSetting)
         self.viewControllers = [main, setting]
         //self.selectedIndex = 0;
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
 }

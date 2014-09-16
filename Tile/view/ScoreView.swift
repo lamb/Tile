@@ -27,7 +27,7 @@ class ScoreView:UIView, ScoreViewProtocol{
     }
     }
     
-    init(){
+    override init(){
         label = UILabel(frame:defaultFrame)
         label.textAlignment = NSTextAlignment.Center
         super.init(frame:defaultFrame)
@@ -35,6 +35,10 @@ class ScoreView:UIView, ScoreViewProtocol{
         label.font = UIFont(name:"微软雅黑", size:16)
         label.textColor = UIColor.whiteColor()
         self.addSubview(label)
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     func changeScore(value s:Int){
